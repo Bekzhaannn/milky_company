@@ -23,9 +23,16 @@ def admin():
             return render_template('admin.html', data=data)
         else:
             flash('Не правельный логин или пароль!', 'error'), 407
-
-
     return render_template('login.html',data = data)
+
+@app.route('/delete_card', methods=['POST'])
+def delete_card():
+    id = request.form['id']
+    for card in data:
+        print(str(id))
+        if str(card['id']) == str(id):
+            data.remove(card)
+    return redirect('/admin')
 # Обработка формы редактирования товара
 @app.route('/admin/update_product/<int:product_id>', methods=['POST'])
 def update_product(product_id):
