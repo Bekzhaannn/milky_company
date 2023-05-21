@@ -19,15 +19,15 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 400px;
-    height: 600px;
+    width: 420px;
+    height: 610px;
     margin: 10px;
-    background-color: #f0e9f0;
+    background-color: #ffffff;
     border-radius: 10px;
     border: 3px solid  #ec04d9;
     position: relative;
     box-shadow: 10px 10px 10px #ec04d9;
- 
+    font-family: "Lucida Console", "Courier New", "monospace";
   }
 
 .image_footbaler{
@@ -35,8 +35,11 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 390px;
+    width: 400px;
     height: 400px;
+    background-color: #f0e9f0;
+    border: 3px solid  #ec04d9;
+    margin: 12px;
   }
 
 .card h5{
@@ -46,11 +49,11 @@
 
 .price{
     word-spacing: 80px;
-    margin: 20px;
+    margin: 10px;
 }
 .category{
-    word-spacing: 80px;
-    margin: 20px;
+    word-spacing: 50px;
+    margin: 10px;
 }
 
 .company{
