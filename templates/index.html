@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel=" stylesheet" href="../static/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="cards">
+        {% for item in data %}
+        <div class="card">
+            <h5> Айди: {{ item.id }}</h5>
+            <img class="image_footbaler" src="https://www.gastronom.ru/binfiles/images/20230217/b0c617cf.jpg" alt="">
+            <h1>{{ item.name }}</h1>
+            <h4>описание:{{ item.description }} </h4>
+            <h4 class="price">цена:{{ item.price }} оптом_цена:{{ item.wholesale_price }}</h4>
+            <h4 class="category">категория:{{ item.category }} дата:{{ item.date }}</h4>
+
+        </div>
+        {% endfor %}
+    </body>
+</body>
+</html>
