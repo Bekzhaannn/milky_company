@@ -102,3 +102,10 @@
 .edit-link{
   color: #be0361;
 }
+.del{
+  width: 120px;
+  border-color: #ff00d4;
+  border-radius: 120px;
+  color: #ff05f2;
+  background-color: #ffffff;
+}

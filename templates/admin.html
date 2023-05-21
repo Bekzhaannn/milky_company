@@ -17,6 +17,11 @@
         <div class="cards">
             {% for item in data %}
             <div class="card">
+              <form class="delete" action="/delete_card" method="POST">
+                <input class="del" type="submit" value="Удалить шоколад">
+                </input>
+                <input type="hidden" name="id" value="{{ item.id }}" />
+              </form>
                 <h5> Айди: {{ item.id }}</h5>
                 <img class="image_chocolate" src="https://www.gastronom.ru/binfiles/images/20230217/b0c617cf.jpg" alt="">
                 <h1>{{ item.name }}</h1>
