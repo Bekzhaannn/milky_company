@@ -2,12 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel=" stylesheet" href="../static/style.css">
   <title>Login - MilkyCompany Admin</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
   <div class="container">
-    <h2>Login</h2>
+    <h2 class="login-title">Login</h2>
+
 
     {% with messages = get_flashed_messages() %}
       {% if messages %}
@@ -20,15 +22,13 @@
     {% endwith %}
 
     <form method="POST" action="{{ url_for('admin') }}" class="login-form">
-      <div class="form-group">
+      <div class="form_group">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
-      </div>
-      <div class="form-group">
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
+        <button type="submit" class="btn_login">Login</button>
       </div>
-      <button type="submit" class="btn-login">Login</button>
     </form>
   </div>
 </body>
