@@ -1,38 +1,30 @@
-<!-- edit_product.html -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Edit Product - MilkyCompany</title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Edit Product</title>
 </head>
 <body>
-  <nav class="navbar">
-    <h1>Edit Product - MilkyCompany</h1>
-  </nav>
+    <h1>Edit Product</h1>
+    <form method="POST" action="{{ url_for('update_product', product_id=product['id']) }}">
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="{{ product['name'] }}"><br><br>
 
-  <div class="container">
-    <h2>Edit Product</h2>
-    <form action="{{ url_for('update_product', product_id=product.id) }}" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" value="{{ product.name }}" required>
+        <label for="image_url">Image URL:</label>
+        <input type="text" name="image_url" value="{{ product['image_url'] }}"><br><br>
 
-      <label for="image_url">Image URL:</label>
-      <input type="text" id="image_url" name="image_url" value="{{ product.image_url }}" required>
+        <label for="price">Price:</label>
+        <input type="text" name="price" value="{{ product['price'] }}"><br><br>
 
-      <label for="price">Price:</label>
-      <input type="number" id="price" name="price" value="{{ product.price }}" required>
+        <label for="description">Description:</label><br>
+        <textarea name="description" rows="4" cols="50">{{ product['description'] }}</textarea><br><br>
 
-      <label for="description">Description:</label>
-      <textarea id="description" name="description" required>{{ product.description }}</textarea>
+        <label for="category">Category:</label>
+        <input type="text" name="category" value="{{ product['category'] }}"><br><br>
 
-      <label for="category">Category:</label>
-      <input type="text" id="category" name="category" value="{{ product.category }}" required>
+        <label for="quantity">Quantity:</label>
+        <input type="text" name="quantity" value="{{ product['quantity'] }}"><br><br>
 
-      <label for="quantity">Quantity:</label>
-      <input type="number" id="quantity" name="quantity" value="{{ product.quantity }}" required>
-
-      <button type="submit" class="button">Update</button>
+        <input type="submit" value="Update Product">
     </form>
-  </div>
 </body>
 </html>
