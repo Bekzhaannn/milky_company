@@ -10,7 +10,37 @@ app.secret_key = 'pass'
 
 @app.route('/')
 def index():
-    return render_template('index.html', products  =products )
+    return render_template('index.html', products  = products )
+# Добавление товара
+@app.route('/admin/add_product', methods=['GET', 'POST'])
+def add_product():
+    if request.method == 'POST':
+        # Получение данных из формы
+        name = request.form.get('name')
+        image_url = request.form.get('image_url')
+        price = request.form.get('price')
+        description = request.form.get('description')
+        category = request.form.get('category')
+        quantity = request.form.get('quantity')
+
+        # Создание нового товара
+        new_product = {
+            'id': len(products) + 1,
+            'name': name,
+            'image_url': image_url,
+            'price': float(price),
+            'description': description,
+            'category': category,
+            'quantity': int(quantity)
+        }
+
+        # Добавление нового товара в список
+        products.append(new_product)
+
+        flash('Product added successfully.', 'success')
+        return redirect(url_for('admin'))
+
+    return render_template('add_product.html')
 
 # Админка
 @app.route('/admin', methods=['GET', 'POST'])

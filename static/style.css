@@ -13,6 +13,14 @@ background-size: cover;
 background-size: cover;
 color:aliceblue
 }
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
 .card {
 display: flex;
@@ -93,6 +101,17 @@ align-items: center;
 
 .btn_login{
 margin: 5px;
+background-color: #0056b3;
+display: block;
+width: 100%;
+padding: 10px;
+font-size: 16px;
+font-weight: bold;
+color: #fff;
+background-color: #007bff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
 }
 
 .Whats{

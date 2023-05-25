@@ -16,6 +16,7 @@
     <ul class="product-list">
       {% for product in products %}
       <li>
+        <a href="http://127.0.0.1:5000/admin/add_product" class="add-produkt">Edit</a>
         <div class="product-card">
           <img src="{{ product.image_url }}" alt="{{ product.name }}" class="product-image">
           <h3 class="product-name">{{ product.name }}</h3>
