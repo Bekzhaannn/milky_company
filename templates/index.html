@@ -13,15 +13,15 @@
         <h1>MilkyCompany</h1>
       </nav>
     <div class="cards">
-        {% for item in data %}
-        <div class="product-card">
-            <img src="{{ product.image_url }}" alt="{{ product.name }}" class="product-image">
-            <h3 class="product-name">{{ product.name }}</h3>
-            <p class="product-price">Price: ${{ product.price }}</p>
-            <p class="product-description">{{ product.description }}</p>
-            <p class="product-category">Category: {{ product.category }}</p>
+        {% for products in products %}
+        <div class="products-card">
+            <img src="{{ products.image_url }}" alt="{{ products.name }}" class="product-image">
+            <h3 class="product-name">{{ products.name }}</h3>
+            <p class="product-price">Price: ${{ products.price }}</p>
+            <p class="product-description">{{ products.description }}</p>
+            <p class="product-category">Category: {{ products.category }}</p>
             <a href="https://wa.me/+77773711620" class="Whats">WhatsApp</a>
-            <p class="product-quantity">Quantity: {{ product.quantity }}</p>
+            <p class="product-quantity">Quantity: {{ products.quantity }}</p>
 
           </div>
 
