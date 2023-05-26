@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-from products import products , data
-from data import data
+from products import products 
+
 
 
 app = Flask(__name__) 
