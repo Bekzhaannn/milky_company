@@ -1,9 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, render_template, request, redirect
-from data  import data 
-from data import products
+from flask import Flask, render_template, request, redirect, url_for, flash
+from products import products , data
+from data import data
 
-import datetime
-import os
 
 app = Flask(__name__) 
 app.secret_key = 'pass'

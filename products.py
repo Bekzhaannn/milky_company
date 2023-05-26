@@ -1,5 +1,4 @@
-data = [{'id': 1, 'name': 'Плитка', 'description':'молочные дольки', 'price': 5 , 'wholesale_price': 5 , 'category': 'шоколад', 'date': '10.05.2022'}]
-products = [
+data = [
     {
         'id': 1,
         'name': 'Product 1',
