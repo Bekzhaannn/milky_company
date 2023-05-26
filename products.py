@@ -3,10 +3,11 @@ products  = [
         'id': 1,
         'name': 'Product 1',
         'image_url': 'https://justfunfacts.com/wp-content/uploads/2021/02/milka-3.jpg',
-        'price': 10.99,
         'description': 'Description for Product 1',
+        'price': 10.99,
+        'wholesale_price': 10.9,
         'category': 'Category 1',
-        'quantity': 10
+        'date': '10.10.2008'
     },
     {
         'id': 2,
