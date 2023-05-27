@@ -8,7 +8,8 @@ app.secret_key = 'pass'
 
 @app.route('/')
 def index():
-    return render_template('index.html', products  = products )
+    return render_template('index.html', products = products )
+
 # Добавление товара
 @app.route('/admin/add_product', methods=['GET', 'POST'])
 def add_product():
@@ -49,15 +50,15 @@ def admin():
         password = request.form.get('password')
 
         if username == 'milk_admin' and password == 'Atmosphere29567':
-            return render_template('admin.html', products  =products )
+            return render_template('admin.html', products=products )
         else:
             flash('Не правельный логин или пароль!', 'error'), 407
-    return render_template('login.html',products  =products )
+    return render_template('login.html',products=products )
 
-def find_product_by_id(product_id):
-    for product in products:
-        if product['id'] == product_id:
-            return product
+def find_product_by_id(products_id):
+    for products in products:
+        if products['id'] == products_id:
+            return products
     return None
 
 @app.route('/delete_card', methods=['POST'])
@@ -71,12 +72,12 @@ def delete_card():
 
 # Поиск товара по ID в списке products
 @app.route('/admin/edit_product/<int:product_id>', methods=['GET'])
-def edit_product(product_id):
+def edit_product(products_id):
     # Поиск товара по ID
-    product = find_product_by_id(product_id)
+    products = find_product_by_id(products_id)
 
-    if product:
-        return render_template('edit_product.html', product=product)
+    if products:
+        return render_template('edit_product.html', products=products)
     else:
         flash('Product not found.', 'error')
         return redirect(url_for('admin'))

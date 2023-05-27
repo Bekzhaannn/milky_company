@@ -39,7 +39,7 @@ box-shadow: 10px 10px 10px #ec04d9;
 font-family: "Lucida Console", "Courier New", "monospace";
 }
 
-.image_chocolate{
+.image_chocolatee{
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
@@ -56,11 +56,11 @@ position: absolute;
 right: 10px;
 }
 
-.price{
+.product-price{
 word-spacing: 80px;
 margin: 10px;
 }
-.category{
+.product-category{
 word-spacing: 50px;
 margin: 10px;
 }
