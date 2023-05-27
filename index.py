@@ -50,10 +50,10 @@ def admin():
         password = request.form.get('password')
 
         if username == 'milk_admin' and password == 'Atmosphere29567':
-            return render_template('admin.html', products=products )
+            return render_template('admin.html', products=products)
         else:
             flash('Не правельный логин или пароль!', 'error'), 407
-    return render_template('login.html',products=products )
+    return render_template('login.html',products=products)
 
 def find_product_by_id(products_id):
     for products in products:
@@ -85,7 +85,7 @@ def edit_product(products_id):
 
 # Обработка формы редактирования товара
 @app.route('/admin/update_product/<int:product_id>', methods=['POST'])
-def update_product(product_id):
+def update_product(products_id):
     # Получение данных из формы
     name = request.form.get('name')
     image_url = request.form.get('image_url')
@@ -95,16 +95,16 @@ def update_product(product_id):
     quantity = int(request.form.get('quantity'))
 
     # Поиск товара по ID
-    product = find_product_by_id(product_id)
+    products = find_product_by_id(products_id)
 
-    if product:
+    if products:
         # Обновление данных товара
-        product['name'] = name
-        product['image_url'] = image_url
-        product['price'] = price
-        product['description'] = description
-        product['category'] = category
-        product['quantity'] = quantity
+        products['name'] = name
+        products['image_url'] = image_url
+        products['price'] = price
+        products['description'] = description
+        products['category'] = category
+        products['quantity'] = quantity
 
         flash('Product updated successfully.', 'success')
     else:

@@ -17,10 +17,10 @@
             <h5>{{ products.id }}</h5>
             <img class="image_chocolatee" src="{{ products.image_url }}" alt="{{ products.name }}" class="product-image">
             <h3 class="product-name">{{ products.name }}</h3>
-            <p class="product-description">{{ products.description }}</p>
-            <p class="product-price"> {{ products.price }}</p><p>Quantity: {{ products.wholesale_price }}</p>
+            <p class="product-description">Description:{{ products.description }}</p>
+            <p class="product-price"> {{ products.price }} {{ products.wholesale_price }}</p>
             <a href="https://wa.me/+77773711620" class="Whats">WhatsApp</a>
-            <p class="product-category"> {{ products.category }} date: {{ products.date }}</p>
+            <p class="product-category"> Category:{{ products.category }} {{ products.date }}</p>
         </div>
         {% endfor %}
 </body>
