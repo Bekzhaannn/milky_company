@@ -2,8 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from products import products 
 
 
-
-app = Flask(__name__) 
+app = Flask(__name__, static_url_path='/static')
 app.secret_key = 'pass'
 
 @app.route('/')
@@ -71,10 +70,10 @@ def delete_card():
     return redirect('/admin')
 
 # Поиск товара по ID в списке products
-@app.route('/admin/edit_product/<int:product_id>', methods=['GET'])
-def edit_product(products_id):
+@app.route('/edit_product/<int:product_id>', methods=['GET', 'POST'])
+def edit_product(product_id):  
     # Поиск товара по ID
-    products = find_product_by_id(products_id)
+    products = find_product_by_id(product_id)
 
     if products:
         return render_template('edit_product.html', products=products)
