@@ -58,9 +58,11 @@ def admin():
     return render_template('login.html',product=product)
 
 def find_product_by_id(product_id):
-    for product in product:
-        if product['id'] == product_id:
-            return product
+    for prod in product:
+        print(prod)
+        if prod['id'] == product_id:
+            print(prod)
+            return prod
     return None
 
 @app.route('/delete_card', methods=['POST'])
@@ -85,7 +87,6 @@ def edit_product(product_id):
         return redirect(url_for('admin'))
 
 
-# Обработка формы редактирования товара
 @app.route('/admin/update_product/<int:product_id>', methods=['POST'])
 def update_product(product_id):
     # Получение данных из формы
@@ -95,7 +96,7 @@ def update_product(product_id):
     wholesale_price = request.form.get('wholesale_price')
     description = request.form.get('description')
     category = request.form.get('category')
-    date = int(request.form.get('date'))
+    date = request.form.get('date')
 
     # Поиск товара по ID
     product = find_product_by_id(product_id)
@@ -116,7 +117,6 @@ def update_product(product_id):
 
     # Перенаправление на страницу админки
     return redirect(url_for('admin'))
-
 
 if __name__ == '__main__':
     app.run(debug=True)
