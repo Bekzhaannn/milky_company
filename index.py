@@ -25,7 +25,7 @@ def add_product():
 
         # Создание нового товара
         new_product = {
-            'id': len(products) + 1,
+            'id': len(product) + 1,
             'name': name,
             'image_url': image_url,
             'price': float(price),
@@ -36,7 +36,7 @@ def add_product():
         }
 
         # Добавление нового товара в список
-        products.append(new_product)
+        product.append(new_product)
 
         flash('Product added successfully.', 'success')
         return redirect(url_for('admin'))
