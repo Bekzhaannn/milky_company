@@ -43,6 +43,25 @@ font-family: "Lucida Console", "Courier New", "monospace";
 font-size: 20px;
 }
 
+.admin_card {
+  display: flex;
+  color: #ec04d9;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 420px;
+  height: 660px;
+  margin: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 3px solid #ec04d9; 
+  position: relative;
+  box-shadow: 10px 10px 10px  #ec04d9;
+  font-family: "Lucida Console", "Courier New", "monospace";
+  font-size: 20px;
+  }
+  
+
 .image_chocolatee{
 display: flex;
 flex-direction: column;
@@ -144,4 +163,32 @@ border-color: #ff00d4;
 border-radius: 120px;
 color: #ff05f2;
 background-color: #ffffff;
+}
+
+.add_button {
+  margin: 5px;
+  background-color: #0056b3;
+  display: block;
+  width: 120px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit_link{
+  color: #ffffff;
+  background-color: #dc2eff;
+  border: 2px #dc2eff;
+  border-radius: 15px;
+  width: 100px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

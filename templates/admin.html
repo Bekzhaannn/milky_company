@@ -14,18 +14,18 @@
 
     <h2>Product List</h2>
   </nav>
-  <a href="http://127.0.0.1:5000/admin/add_product" class="add-produkt">Add product</a>
+  <a href="http://127.0.0.1:5000/admin/add_product" class="add_button">Add product</a>
     <ul class="product-list">
       {% for product in product %}
-      <div class="card">
+      <div class="admin_card">
           <h5>{{ product.id }}</h5>
           <img class="image_chocolatee" src="{{ product.image_url }}" alt="{{ product.name }}" class="product-image">
           <h3 class="product-name">{{ product.name }}</h3>
           <p class="product-description">{{ product.description }}</p>
-          <p class="product-price"> {{ product.price }}</p><p>Quantity: {{ product.wholesale_price }}</p>
+          <p class="product-price"> {{ product.price }} {{ product.wholesale_price }}</p>
           <a href="https://wa.me/+77773711620" class="Whats">WhatsApp</a>
-          <p class="product-category"> {{ product.category }}</p><p>date: {{ product.date }}</p>
-          <a href="{{ url_for('edit_product', product_id=product.id) }}" class="edit-link">Edit</a>
+          <p class="product-category"> Category:{{ product.category }} {{ product.date }}</p>
+          <a href="{{ url_for('edit_product', product_id=product.id) }}" class="edit_link">Edit</a>
       </div>
 
     {% endfor %}

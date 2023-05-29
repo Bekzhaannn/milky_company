@@ -21,7 +21,7 @@ def add_product():
         wholesale_price = request.form.get('wholesale_price')
         description = request.form.get('description')
         category = request.form.get('category')
-        quantity = request.form.get('quantity')
+        date = request.form.get('date')
 
         # Создание нового товара
         new_product = {
@@ -32,7 +32,7 @@ def add_product():
             'wholesale_price': float(wholesale_price),
             'description': description,
             'category': category,
-            'quantity': int(quantity)
+            'date': int(date)
         }
 
         # Добавление нового товара в список
