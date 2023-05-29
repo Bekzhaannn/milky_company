@@ -14,19 +14,18 @@
 
     <h2>Product List</h2>
   </nav>
-  <a href="http://127.0.0.1:5000/admin/add_product" class="add-produkt">Add products</a>
     <ul class="product-list">
-      {% for products in products %}          
+      {% for product in product %}
       <div class="card">
-
-          <h5>{{ products.id }}</h5>
-          <img class="image_chocolatee" src= "{{ products.image_url }}" alt="{{ products.name }} " >
-          <h3 class="product-name">{{ products.name }}</h3>
-          <p class="product-description">Description:{{ products.description }}</p>
-          <p class="product-price"> {{ products.price }}</p><p>Quantity: {{ products.wholesale_price }}</p>
+          <a href="http://127.0.0.1:5000/admin/add_product" class="add-produkt">Edit</a>
+          <h5>{{ product.id }}</h5>
+          <img class="image_chocolatee" src="{{ product.image_url }}" alt="{{ product.name }}" class="product-image">
+          <h3 class="product-name">{{ product.name }}</h3>
+          <p class="product-description">{{ product.description }}</p>
+          <p class="product-price"> {{ product.price }}</p><p>Quantity: {{ product.wholesale_price }}</p>
           <a href="https://wa.me/+77773711620" class="Whats">WhatsApp</a>
-          <p class="product-category"> {{ products.category }}</p><p>date: {{ products.date }}</p>
-          <a href="{{ url_for('edit_products', products_id=products.id) }}" class="edit-link">Edit</a>
+          <p class="product-category"> {{ product.category }}</p><p>date: {{ product.date }}</p>
+          <a href="{{ url_for('edit_product', product_id=product.id) }}" class="edit-link">Edit</a>
       </div>
 
     {% endfor %}

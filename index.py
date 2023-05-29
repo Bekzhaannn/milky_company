@@ -1,13 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-from products import products 
+from product import product
 
 
-app = Flask(__name__, static_url_path='/static')
+
+app = Flask(__name__) 
 app.secret_key = 'pass'
 
 @app.route('/')
 def index():
-    return render_template('index.html', products = products )
+    return render_template('index.html', product = product )
 
 # Добавление товара
 @app.route('/admin/add_product', methods=['GET', 'POST'])
@@ -17,6 +18,7 @@ def add_product():
         name = request.form.get('name')
         image_url = request.form.get('image_url')
         price = request.form.get('price')
+        wholesale_price = request.form.get('wholesale_price')
         description = request.form.get('description')
         category = request.form.get('category')
         quantity = request.form.get('quantity')
@@ -27,6 +29,7 @@ def add_product():
             'name': name,
             'image_url': image_url,
             'price': float(price),
+            'wholesale_price': float(wholesale_price),
             'description': description,
             'category': category,
             'quantity': int(quantity)
@@ -49,34 +52,34 @@ def admin():
         password = request.form.get('password')
 
         if username == 'milk_admin' and password == 'Atmosphere29567':
-            return render_template('admin.html', products=products)
+            return render_template('admin.html', product=product)
         else:
             flash('Не правельный логин или пароль!', 'error'), 407
-    return render_template('login.html',products=products)
+    return render_template('login.html',product=product)
 
-def find_product_by_id(products_id):
-    for products in products:
-        if products['id'] == products_id:
-            return products
+def find_product_by_id(product_id):
+    for product in product:
+        if product['id'] == product_id:
+            return product
     return None
 
 @app.route('/delete_card', methods=['POST'])
 def delete_card():
     id = request.form['id']
-    for card in products :
+    for card in product :
         print(str(id))
         if str(card['id']) == str(id):
-            products .remove(card)
+            product.remove(card)
     return redirect('/admin')
 
 # Поиск товара по ID в списке products
-@app.route('/edit_product/<int:product_id>', methods=['GET', 'POST'])
-def edit_product(product_id):  
+@app.route('/admin/edit_product/<int:product_id>', methods=['GET'])
+def edit_product(product_id):
     # Поиск товара по ID
-    products = find_product_by_id(product_id)
+    product=find_product_by_id(product_id)
 
-    if products:
-        return render_template('edit_product.html', products=products)
+    if product:
+        return render_template('edit_product.html', product=product)
     else:
         flash('Product not found.', 'error')
         return redirect(url_for('admin'))
@@ -84,26 +87,28 @@ def edit_product(product_id):
 
 # Обработка формы редактирования товара
 @app.route('/admin/update_product/<int:product_id>', methods=['POST'])
-def update_product(products_id):
+def update_product(product_id):
     # Получение данных из формы
     name = request.form.get('name')
     image_url = request.form.get('image_url')
     price = float(request.form.get('price'))
+    wholesale_price = request.form.get('wholesale_price')
     description = request.form.get('description')
     category = request.form.get('category')
-    quantity = int(request.form.get('quantity'))
+    date = int(request.form.get('date'))
 
     # Поиск товара по ID
-    products = find_product_by_id(products_id)
+    product = find_product_by_id(product_id)
 
-    if products:
+    if product:
         # Обновление данных товара
-        products['name'] = name
-        products['image_url'] = image_url
-        products['price'] = price
-        products['description'] = description
-        products['category'] = category
-        products['quantity'] = quantity
+        product['name'] = name
+        product['image_url'] = image_url
+        product['price'] = price
+        product['description'] = description
+        product['wholesale_price'] = wholesale_price
+        product['category'] = category
+        product['date'] = date
 
         flash('Product updated successfully.', 'success')
     else:
