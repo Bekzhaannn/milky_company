@@ -17,28 +17,28 @@
         {% endif %}
     {% endwith %}
     <form method="POST" action="{{ url_for('add_product') }}">
-        <label for="name">Name:</label>
+        <label for="name">Название:</label>
         <input type="text" name="name" required><br>
 
-        <label for="image_url">Image URL:</label>
+        <label for="image_url">URL ccылка:</label>
         <input type="text" name="image_url" required><br>
 
-        <label for="price">Price:</label>
+        <label for="price">Цена:</label>
         <input type="number" name="price" required><br>
 
-        <label for="wholesale_price">Wholesale_price:</label>
+        <label for="wholesale_price">Цена партии:</label>
         <input type="number" name="wholesale_price" required><br>
 
-        <label for="description">Description:</label>
+        <label for="description">Описание:</label>
         <textarea name="description" required></textarea><br>
 
-        <label for="category">Category:</label>
+        <label for="category">Категория:</label>
         <input type="text" name="category" required><br>
 
-        <label for="date">Date:</label>
-        <input type="number" name="date" required><br>
+        <label for="date">Дата:</label>
+        <input type="date" name="date" required><br>
 
-        <input type="submit" value="Add Product">
+        <input type="submit" value="Добавить продукт">
     </form>
 </body>
 </html>

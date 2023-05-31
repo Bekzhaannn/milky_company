@@ -32,7 +32,7 @@ def add_product():
             'wholesale_price': float(wholesale_price),
             'description': description,
             'category': category,
-            'date': int(date)
+            'date': date
         }
 
         # Добавление нового товара в список
