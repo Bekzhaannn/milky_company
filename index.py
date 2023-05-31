@@ -84,15 +84,15 @@ def edit_product(product_id):
         return render_template('edit_product.html', product=product)
     else:
         flash('Product not found.', 'error')
-        return redirect('/admin')
+        return redirect(url_for('admin'))
 
 
 @app.route('/admin/update_product/<int:product_id>', methods=['POST'])
-def update_product(product_id):
+def update_product(product_id): 
     # Получение данных из формы
     name = request.form.get('name')
     image_url = request.form.get('image_url')
-    price = float(request.form.get('price'))
+    price = request.form.get('price')
     wholesale_price = request.form.get('wholesale_price')
     description = request.form.get('description')
     category = request.form.get('category')
@@ -116,7 +116,7 @@ def update_product(product_id):
         flash('Product not found.', 'error')
 
     # Перенаправление на страницу админки
-    return redirect('/admin')
+    return redirect(url_for('admin'))
 
 if __name__ == '__main__':
     app.run(debug=True)
