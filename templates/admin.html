@@ -20,6 +20,12 @@
       {% for product in product %}
       <div class="admin_card">
           <h5>{{ product.id }}</h5>
+          
+          <form class="delete" action="/delete_card" method="POST">
+            <input class="del" type="submit" value="Удалить продукт">
+            </input>
+            <input type="hidden" name="id" value="{{ product.id }}" />
+          </form>
           <img class="image_chocolatee" src="{{ product.image_url }}" alt="{{ product.name }}" class="product-image">
           <h3 class="product-name">{{ product.name }}</h3>
           <p class="product-description">{{ product.description }}</p>

@@ -84,7 +84,7 @@ def edit_product(product_id):
         return render_template('edit_product.html', product=product)
     else:
         flash('Product not found.', 'error')
-        return redirect(url_for('admin'))
+        return redirect('/admin')
 
 
 @app.route('/admin/update_product/<int:product_id>', methods=['POST'])
@@ -116,7 +116,7 @@ def update_product(product_id):
         flash('Product not found.', 'error')
 
     # Перенаправление на страницу админки
-    return redirect(url_for('admin'))
+    return redirect('/admin')
 
 if __name__ == '__main__':
     app.run(debug=True)
