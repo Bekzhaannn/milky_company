@@ -1,33 +1,40 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Product- MilkyCompany Admin</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico" />
+    <title>Add Product- MilkyCompany Admin</title>
 </head>
 <body>
-    <h1>Edit Product</h1>
-    <form method="POST" action="{{ url_for('update_product', product_id=product['id']) }}">
-        <label for="name">Name:</label>
-        <input type="text" name="name" value="{{ product['name'] }}"><br><br>
+    <h1>Изменение продукта</h1>
 
-        <label for="image_url">Image URL:</label>
-        <input type="text" name="image_url" value="{{ product['image_url'] }}"><br><br>
 
-        <label for="price">Price:</label>
-        <input type="text" name="price" value="{{ product['price'] }}"><br><br>
+    <div class="edit_product">
+        <form method="POST" action="{{ url_for('update_product', product_id=product['id']) }}">
+            <label for="name">Название:</label>
+            <input type="text" name="name" value="{{ product['name'] }}"><br><br>
 
-        <label for="price">Price:</label>
-        <input type="text" name="price" value="{{ product['price'] }}"><br><br>
+            <label for="image_url">URL ccылка:</label>
+            <input type="text" name="image_url" value="{{ product['image_url'] }}"><br><br>
 
-        <label for="description">Description:</label><br>
-        <textarea name="description" rows="4" cols="50">{{ product['description'] }}</textarea><br><br>
+            <label for="price">Цена продукта:</label>
+            <input type="text" name="price" value="{{ product['price'] }}"><br><br>
 
-        <label for="category">Category:</label>
-        <input type="text" name="category" value="{{ product['category'] }}"><br><br>
+            <label for="price">Оптовая цена:</label>
+            <input type="text" name="price" value="{{ product['price'] }}"><br><br>
 
-        <label for="date">Date:</label>
-        <input type="date" name="date" value="{{ product['date'] }}"><br><br>
+            <label for="description">Описание продукта:</label><br>
+            <textarea name="description" rows="4" cols="50">{{ product['description'] }}</textarea><br><br>
 
-        <input type="submit" value="Update Product">
-    </form>
+            <label for="category">Категория:</label>
+            <input type="text" name="category" value="{{ product['category'] }}"><br><br>
+
+            <label for="date">Дата изготовления:</label>
+            <input type="date" name="date" value="{{ product['date'] }}"><br><br>
+
+            <input type="submit" value="Update Product">
+        </form>
+    </div>
 </body>
 </html>

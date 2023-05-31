@@ -25,6 +25,12 @@ input[type="password"] {
   border-radius: 5px;
 }
 
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .card {
 display: flex;
 color: #ec04d9;
@@ -84,7 +90,7 @@ word-spacing: 50px;
 margin: 10px;
 }
 .product-category{
-word-spacing: 50px;
+word-spacing: 30px;
 margin: 10px;
 }
 
@@ -166,18 +172,16 @@ background-color: #ffffff;
 }
 
 .add_button {
-  margin: 5px;
-  background-color: #0056b3;
-  display: block;
+  color: #ffffff;
+  background-color: #dc2eff;
+  border: 2px #dc2eff;
+  border-radius: 15px;
   width: 120px;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .edit_link{
@@ -191,4 +195,40 @@ background-color: #ffffff;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.add_product {
+  display: flex;
+  color: #ec04d9;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 300px;
+  height: 500px;
+  margin: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 3px solid #ec04d9; 
+  position: relative;
+  box-shadow: 10px 10px 10px  #ec04d9;
+  font-family: "Lucida Console", "Courier New", "monospace";
+  font-size: 20px;
+  }
+
+.edit_product {
+  display: flex;
+  color: #ec04d9;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 300px;
+  height: 500px;
+  margin: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 3px solid #ec04d9; 
+  position: relative;
+  box-shadow: 10px 10px 10px  #ec04d9;
+  font-family: "Lucida Console", "Courier New", "monospace";
+  font-size: 20px;
 }

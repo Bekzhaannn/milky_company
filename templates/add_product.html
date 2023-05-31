@@ -2,11 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel=" stylesheet" href="../static/style.css">
     <link rel="icon" type="image/x-icon" href="../static/favicon.ico" />
     <title>Add Product- MilkyCompany Admin</title>
 </head>
 <body>
-    <h1>Add Product</h1>
+    <h1>Добавление продукта</h1>
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             <ul class="messages">
@@ -16,29 +17,32 @@
             </ul>
         {% endif %}
     {% endwith %}
-    <form method="POST" action="{{ url_for('add_product') }}">
-        <label for="name">Название:</label>
-        <input type="text" name="name" required><br>
 
-        <label for="image_url">URL ccылка:</label>
-        <input type="text" name="image_url" required><br>
+    <div class="add_product">
+        <form method="POST" action="{{ url_for('add_product') }}">
+            <label for="name">Название:</label>
+            <input type="text" name="name" required><br>
 
-        <label for="price">Цена:</label>
-        <input type="number" name="price" required><br>
+            <label for="image_url">URL ccылка:</label>
+            <input type="text" name="image_url" required><br>
 
-        <label for="wholesale_price">Цена партии:</label>
-        <input type="number" name="wholesale_price" required><br>
+            <label for="price">Цена продукта:</label>
+            <input type="number" name="price" required><br>
 
-        <label for="description">Описание:</label>
-        <textarea name="description" required></textarea><br>
+            <label for="wholesale_price">Оптовая цена:</label>
+            <input type="number" name="wholesale_price" required><br>
 
-        <label for="category">Категория:</label>
-        <input type="text" name="category" required><br>
+            <label for="description">Описание продукта:</label>
+            <textarea name="description" required></textarea><br>
 
-        <label for="date">Дата:</label>
-        <input type="date" name="date" required><br>
+            <label for="category">Категория:</label>
+            <input type="text" name="category" required><br>
 
-        <input type="submit" value="Добавить продукт">
-    </form>
+            <label for="date">Дата изготовления:</label>
+            <input type="date" name="date" required><br>
+
+            <input class="add_button" type="submit" value="Добавить продукт">
+        </form>
+    </div>
 </body>
 </html>
