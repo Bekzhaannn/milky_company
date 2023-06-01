@@ -38,7 +38,7 @@ def add_product():
         # Добавление нового товара в список
         product.append(new_product)
 
-        flash('Product added successfully.', 'success')
+        flash('Продукт добавлен.', 'успешно')
         return redirect(url_for('admin'))
 
     return render_template('add_product.html')
@@ -83,7 +83,7 @@ def edit_product(product_id):
     if product:
         return render_template('edit_product.html', product=product)
     else:
-        flash('Product not found.', 'error')
+        flash('Продукт не найден.', 'error')
         return redirect(url_for('admin'))
     
 
@@ -111,9 +111,9 @@ def update_product(product_id):
         product['wholesale_price'] = wholesale_price
         product['category'] = category
         product['date'] = date
-        flash('Product updated successfully.', 'success')
+        flash('Продукт изменен.', 'успешно')
     else:
-        flash('Product not found.', 'error')
+        flash('Продукт не найден.', 'ошибка')
 
     # Перенаправление на страницу админки
     return redirect(url_for('admin'))

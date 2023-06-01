@@ -167,8 +167,10 @@ color: #be0361;
 width: 120px;
 border-color: #ff00d4;
 border-radius: 120px;
-color: #ff05f2;
-background-color: #ffffff;
+color: #ffffff;
+background-color: #ff00d4;
+position: absolute;
+left: 10px;
 }
 
 .add_button {
@@ -189,7 +191,7 @@ background-color: #ffffff;
   background-color: #dc2eff;
   border: 2px #dc2eff;
   border-radius: 15px;
-  width: 100px;
+  width: 120px;
   height: 25px;
   display: flex;
   flex-direction: column;
