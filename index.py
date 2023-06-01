@@ -85,6 +85,7 @@ def edit_product(product_id):
     else:
         flash('Product not found.', 'error')
         return redirect(url_for('admin'))
+    
 
 
 @app.route('/admin/update_product/<int:product_id>', methods=['POST'])
@@ -110,7 +111,6 @@ def update_product(product_id):
         product['wholesale_price'] = wholesale_price
         product['category'] = category
         product['date'] = date
-
         flash('Product updated successfully.', 'success')
     else:
         flash('Product not found.', 'error')
